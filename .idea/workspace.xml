@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eefeb629-eaff-457f-a31f-d46190bb4f7e" name="Default Changelist" comment="" />
+    <list default="true" id="eefeb629-eaff-457f-a31f-d46190bb4f7e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/repository/ProdutoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/repository/ProdutoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/service/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/service/ProdutoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/service/ProdutoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/service/ProdutoServiceImpl.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/ProjetoMvApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -19,12 +24,25 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/model/Produto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/model/Produtos.java" />
+        <option value="$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/model/Produto.java" />
       </list>
     </option>
   </component>
@@ -38,8 +56,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,16 +188,18 @@
       <workItem from="1593546492736" duration="328000" />
       <workItem from="1593546868733" duration="1232000" />
       <workItem from="1593555788193" duration="4000" />
+      <workItem from="1593563746609" duration="653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1564000" />
+    <option name="totallyTimeSpent" value="2217000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2194332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22348177" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -232,6 +252,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projeto-MV/src/main/java/com/projeto/mv/model/Produto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
