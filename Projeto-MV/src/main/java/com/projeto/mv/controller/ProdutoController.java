@@ -79,14 +79,9 @@ public class ProdutoController {
 			produtoService.editProduto(produto);
 
 		}
+				
 		return new ModelAndView("redirect:/product/list");
 	}
-	
-//	
-//	@PatchMapping(value = "/{codigoProduto}")
-//	public Optional<Produto> patchProduto(@PathVariable final long codigoProduto){
-//		return produtoRepository.findById(codigoProduto);		
-//	}
 	
 	@GetMapping(value="/delete/{codigoProduto}")
 	public ModelAndView deleteProduto(@PathVariable("codigoProduto") final long codigoProduto){

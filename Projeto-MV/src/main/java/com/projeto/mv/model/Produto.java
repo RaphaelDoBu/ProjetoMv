@@ -10,8 +10,8 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Produto {
 	
-	@Id @SequenceGenerator(name = "TEST_SEQ", sequenceName = "TEST_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TEST_SEQ")
+	@Id @SequenceGenerator(name = "COD_SEQ", sequenceName = "COD_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "COD_SEQ")
 	private Long codigoProduto;
 	private String descricaoProduto;
 	private double precoProduto;

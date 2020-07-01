@@ -62,7 +62,11 @@
 					 	 th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
 				        <td th:text="${produto.codigoProduto}"></td>
 						<td th:text="${produto.descricaoProduto}"></td>
-				        <td th:text="${produto.precoProduto}"></td>
+				        <td th:text="'R$ ' + ${produto.precoProduto}">
+				        	<div class="btn-group pull-right"> 
+								<a class="btn btn-sm btn-primary" th:href="@{/product/edit/{id}(id=${produto.codigoProduto})}">Editar</a>
+							</div>
+						</td>
 				        <td>
 							<div class="btn-group pull-right">
 								<a class="btn btn-sm btn-primary" th:href="@{/product/edit/{id}(id=${produto.codigoProduto})}">Editar</a>

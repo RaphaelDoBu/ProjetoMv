@@ -3,6 +3,7 @@ package com.projeto.mv.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,4 +18,7 @@ public interface ProdutoService {
 	Optional<Produto> saveProduto(final Produto produto);
 	void deleteProduto(final long codigoProduto);
 	Optional<Produto> editProduto(Produto produto);
+	void alterarPrecoPorcentPorProduto(long codigoProduto, int porcentagem);
+	void alterarPrecoPorcentGeral(long codigoProduto);
+	
 }
