@@ -16,4 +16,5 @@ public interface ProdutoService {
 	Optional<Produto> findByCodigoProduto(final long codigoProduto);
 	Optional<Produto> saveProduto(final Produto produto);
 	void deleteProduto(final long codigoProduto);
+	Optional<Produto> editProduto(Produto produto);
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,6 +23,7 @@ import com.projeto.mv.dto.ProdutoDTO;
 import com.projeto.mv.model.Produto;
 import com.projeto.mv.repository.ProdutoRepository;
 import com.projeto.mv.service.ProdutoService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 
 @RestController
 @RequestMapping("/produto")
@@ -45,14 +47,14 @@ public class ProdutoController {
 		return produtoService.findByCodigoProduto(codigoProduto);
 	}
 	
-	@GetMapping(value="/add-produto")
+	@GetMapping(value="/novo")
 	public ModelAndView addUser(){
 		ModelAndView model = new ModelAndView("add_product");
 		
 		return model;
 	}
 	
-	@PostMapping(value="/novo")
+	@PostMapping(value="/add")
 	public ModelAndView  saveProduto(@ModelAttribute("produto") Produto produto){
 		if(produto != null) {
 			produtoService.saveProduto(produto);
@@ -60,19 +62,37 @@ public class ProdutoController {
 		return new ModelAndView("redirect:/produto/lista");
 	}
 	
-//	@PutMapping(value = "/{codigoProduto}")
-//	public Optional<Produto> putProduto(@PathVariable final long codigoProduto){
-//		return produtoRepository.findById(codigoProduto);		
-//	}
+	@GetMapping(value = "/edit/{codigoProduto}")
+	public ModelAndView putProduto(@PathVariable final long codigoProduto){
+		ModelAndView model = new ModelAndView("edit_product");
+		
+		Optional<Produto> produto = produtoService.findByCodigoProduto(codigoProduto);
+		if(produto != null) {
+			model.addObject("produto", produto);
+		}
+		return model;	
+	}
+	
+	@PostMapping(value="/editProduct")
+	public ModelAndView addUser(@ModelAttribute("produto") Produto produto){
+		if( produto.getDescricaoProduto() != null ) {
+			produtoService.editProduto(produto);
+
+		}
+		return new ModelAndView("redirect:/produto/lista");
+	}
+	
 //	
 //	@PatchMapping(value = "/{codigoProduto}")
 //	public Optional<Produto> patchProduto(@PathVariable final long codigoProduto){
 //		return produtoRepository.findById(codigoProduto);		
 //	}
 	
-	@DeleteMapping(value = "/{codigoProduto}")
-	public void deleteProduto(@PathVariable final long codigoProduto){
-		produtoService.deleteProduto(codigoProduto);		
+	@GetMapping(value="/delete/{codigoProduto}")
+	public ModelAndView deleteProduto(@PathVariable("codigoProduto") final long codigoProduto){
+		produtoService.deleteProduto(codigoProduto);
+		
+		return new ModelAndView("redirect:/produto/lista");
 	}
 	
 }
