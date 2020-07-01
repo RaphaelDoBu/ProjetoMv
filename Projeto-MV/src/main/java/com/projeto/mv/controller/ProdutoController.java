@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.projeto.mv.dto.ProdutoDTO;
 import com.projeto.mv.model.Produto;
 import com.projeto.mv.repository.ProdutoRepository;
 import com.projeto.mv.service.ProdutoService;
@@ -38,7 +39,7 @@ public class ProdutoController {
 	}
 	
 	@PostMapping(value="/novo")
-	public Optional<Produto> saveProduto(@RequestBody final Produto produto){
+	public Optional<Produto> saveProduto(@RequestBody final ProdutoDTO produto){
 		return produtoService.saveProduto(produto);
 	}
 	
