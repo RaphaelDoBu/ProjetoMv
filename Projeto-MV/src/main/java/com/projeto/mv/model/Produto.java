@@ -11,6 +11,12 @@ public class Produto {
 	private String descricaoProduto;
 	private double precoProduto;
 
+	public Produto(Long codigoProduto, String descricaoProduto, double precoProduto) {
+		this.codigoProduto = codigoProduto;
+		this.descricaoProduto = descricaoProduto;
+		this.precoProduto = precoProduto;
+	}
+
 	public Long getCodigoProduto() {
 		return codigoProduto;
 	}
