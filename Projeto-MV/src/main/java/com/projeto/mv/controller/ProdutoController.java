@@ -26,13 +26,13 @@ import com.projeto.mv.service.ProdutoService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("/product")
 public class ProdutoController {
 	
 	@Autowired
 	private ProdutoService produtoService;
 	
-	@GetMapping(value = "/lista")
+	@GetMapping(value = "/list")
 	public ModelAndView findAll(){
 		ModelAndView model = new ModelAndView("list_product");
 		
@@ -47,7 +47,7 @@ public class ProdutoController {
 		return produtoService.findByCodigoProduto(codigoProduto);
 	}
 	
-	@GetMapping(value="/novo")
+	@GetMapping(value="/new")
 	public ModelAndView addUser(){
 		ModelAndView model = new ModelAndView("add_product");
 		
@@ -55,7 +55,7 @@ public class ProdutoController {
 	}
 	
 	@PostMapping(value="/add")
-	public ModelAndView  saveProduto(@ModelAttribute("produto") Produto produto){
+	public ModelAndView saveProduto(@ModelAttribute("produto") Produto produto){
 		if(produto != null) {
 			produtoService.saveProduto(produto);
 		}

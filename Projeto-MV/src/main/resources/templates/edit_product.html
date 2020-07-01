@@ -22,7 +22,7 @@
 				<h1 class="panel-title">Editar Produto</h1>
 		</div>
 		
-		<form id="stackedForm" method="POST" th:object="${produto}" th:action="@{/produto/editProduct}" style="margin: 20px 0">
+		<form id="stackedForm" method="POST" th:object="${produto}" th:action="@{/product/editProduct}" style="margin: 20px 0">
 			<div class="form-group">
 			    <label for="codigo">Código do Produto:</label>
 			    <input type="text" class="form-control" value="${produto.codigoProduto}" placeholder="Código" th:field="*{codigoProduto}" readonly="readonly"/> 

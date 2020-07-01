@@ -49,9 +49,11 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Id</th>
+                      <th>Código do Produto</th>
                       <th>Descrição</th>
                       <th>Preço</th>
+                      <th>Editar</th>
+                      <th>Excluir</th>
                     </tr>
                   </thead>
                   
@@ -63,12 +65,12 @@
 				        <td th:text="${produto.precoProduto}"></td>
 				        <td>
 							<div class="btn-group pull-right">
-								<a class="btn btn-sm btn-primary" th:href="@{/produto/edit/{id}(id=${produto.codigoProduto})}">Editar</a>
+								<a class="btn btn-sm btn-primary" th:href="@{/product/edit/{id}(id=${produto.codigoProduto})}">Editar</a>
 							</div>
 						</td>
 						<td>
 							<div class="btn-group pull-right">
-								<a class="delete btn btn-sm btn-danger" th:href="@{/produto/delete/{id}(id=${produto.codigoProduto})}">Excluir</a>
+								<a class="delete btn btn-sm btn-danger" th:href="@{/product/delete/{id}(id=${produto.codigoProduto})}">Excluir</a>
 							</div>
 						</td>
 				    </tr>
