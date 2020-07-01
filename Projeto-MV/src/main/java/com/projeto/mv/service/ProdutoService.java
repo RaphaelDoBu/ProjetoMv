@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.projeto.mv.dto.ProdutoDTO;
 import com.projeto.mv.model.Produto;
 
-@Service
 public interface ProdutoService {
 	
 	List<Produto> findAll();
 	Optional<Produto> findByCodigoProduto(final long codigoProduto);
-	Optional<Produto> saveProduto(final ProdutoDTO produto);
+	Optional<Produto> saveProduto(final Produto produto);
 	void deleteProduto(final long codigoProduto);
 }

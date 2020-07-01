@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Adicionar Produto</title>
+
+    <!-- Bootstrap core CSS-->
+    <link th:href="@{../vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link th:href="@{../vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link th:href="@{../vendor/datatables/dataTables.bootstrap4.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link th:href="@{../css/sb-admin.css}" rel="stylesheet">
+
+<style>
+	.add-user {
+		width: 40%;
+       	margin-left: 32%;
+       	margin-top: 3%
+		
+     }
+</style> 
+
+</head>
+
+<body>
+      <div id="content-wrapper">
+		 <div class="container add-user">
+					<h1>Adicionar Produto</h1>
+					<div class="row">
+						<div class="col-md-10">
+						    <form action="/produto/novo" th:action="@{/produto/novo}" th:object="${produto}" method="post">
+						    	<div class="form-group">
+							        <label for="age">Descrição:</label>
+							        <input type="text" class="form-control" placeholder="Descrição" id="descricaoProduto" name="descricaoProduto"/>
+							    </div>	
+						    	<div class="form-group">
+							        <label for="street">Preço:</label>
+							        <input type="text" class="form-control" placeholder="R$..." id="precoProduto" name="precoProduto"/>
+							    </div>
+						    	<button type="submit" class="btn btn-primary">Submit</button>
+						    </form>
+					    </div>
+				    </div>
+			</div>
+		</div>
+    
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script th:src="@{../vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{../vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script th:src="@{../vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script th:src="@{../vendor/datatables/jquery.dataTables.js}"></script>
+    <script th:src="@{../vendor/datatables/dataTables.bootstrap4.js}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script th:src="@{../js/sb-admin.min.js}"></script>
+
+    <!-- Demo scripts for this page-->
+    <script th:src="@{../js/demo/datatables-demo.js}"></script>
+
+  </body>
+
+</html>

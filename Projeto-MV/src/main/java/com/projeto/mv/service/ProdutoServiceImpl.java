@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.projeto.mv.dto.ProdutoDTO;
 import com.projeto.mv.model.Produto;
 import com.projeto.mv.repository.ProdutoRepository;
 
