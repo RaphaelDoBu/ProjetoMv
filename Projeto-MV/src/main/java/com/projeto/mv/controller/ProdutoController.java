@@ -36,8 +36,8 @@ public class ProdutoController {
 	public ModelAndView findAll(){
 		ModelAndView model = new ModelAndView("list_product");
 		
-		List<Produto> list = produtoService.findAll();
-		model.addObject("produtos", list);
+		List<Produto> listaProdutos = produtoService.findAll();
+		model.addObject("produtos", listaProdutos);
 		
 		return model;
 	}
@@ -59,7 +59,7 @@ public class ProdutoController {
 		if(produto != null) {
 			produtoService.saveProduto(produto);
 		}
-		return new ModelAndView("redirect:/produto/lista");
+		return new ModelAndView("redirect:/product/list");
 	}
 	
 	@GetMapping(value = "/edit/{codigoProduto}")
@@ -79,7 +79,7 @@ public class ProdutoController {
 			produtoService.editProduto(produto);
 
 		}
-		return new ModelAndView("redirect:/produto/lista");
+		return new ModelAndView("redirect:/product/list");
 	}
 	
 //	
@@ -92,7 +92,7 @@ public class ProdutoController {
 	public ModelAndView deleteProduto(@PathVariable("codigoProduto") final long codigoProduto){
 		produtoService.deleteProduto(codigoProduto);
 		
-		return new ModelAndView("redirect:/produto/lista");
+		return new ModelAndView("redirect:/product/list");
 	}
 	
 }

@@ -1,15 +1,17 @@
 package com.projeto.mv.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Produto {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id @SequenceGenerator(name = "TEST_SEQ", sequenceName = "TEST_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TEST_SEQ")
 	private Long codigoProduto;
 	private String descricaoProduto;
 	private double precoProduto;
