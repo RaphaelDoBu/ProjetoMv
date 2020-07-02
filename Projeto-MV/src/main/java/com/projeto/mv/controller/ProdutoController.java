@@ -63,23 +63,32 @@ public class ProdutoController {
 	}
 	
 	@GetMapping(value = "/edit/{codigoProduto}")
-	public ModelAndView putProduto(@PathVariable final long codigoProduto){
+	public ModelAndView viewEditProduto(@PathVariable final long codigoProduto){
 		ModelAndView model = new ModelAndView("edit_product");
 		
 		Optional<Produto> produto = produtoService.findByCodigoProduto(codigoProduto);
 		if(produto != null) {
-			model.addObject("produto", produto);
+			model.addObject("produto", produto.get());
 		}
 		return model;	
 	}
 	
 	@PostMapping(value="/editProduct")
-	public ModelAndView addUser(@ModelAttribute("produto") Produto produto){
+	public ModelAndView editProduto(@ModelAttribute("produto") Produto produto){
 		if( produto.getDescricaoProduto() != null ) {
 			produtoService.editProduto(produto);
 
 		}
 				
+		return new ModelAndView("redirect:/product/list");
+	}
+	
+
+	@PostMapping(value="/reajuste")
+	public ModelAndView addUser(@ModelAttribute("produtoAtualizado") Produto produto){
+
+		produtoService.alterarPrecoPorcentPorProduto(produto.getCodigoProduto(), produto.getPorcentagem());
+
 		return new ModelAndView("redirect:/product/list");
 	}
 	

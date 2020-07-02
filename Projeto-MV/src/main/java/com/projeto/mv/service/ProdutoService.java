@@ -18,7 +18,7 @@ public interface ProdutoService {
 	Optional<Produto> saveProduto(final Produto produto);
 	void deleteProduto(final long codigoProduto);
 	Optional<Produto> editProduto(Produto produto);
-	void alterarPrecoPorcentPorProduto(long codigoProduto, int porcentagem);
+	void alterarPrecoPorcentPorProduto(long codigoProduto, double porcentagem);
 	void alterarPrecoPorcentGeral(long codigoProduto);
 	
 }

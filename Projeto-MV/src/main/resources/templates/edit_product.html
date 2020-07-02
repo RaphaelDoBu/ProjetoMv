@@ -29,16 +29,52 @@
 		 	</div>
 		 	<div class="form-group">
 			    <label for="descricao">Descrição:</label>
-				<input type="text" class="form-control" value="${produto.descricaoProduto}" placeholder="Descrição" th:field="*{descricaoProduto}" /> 
+				<input type="text" class="form-control" value="${produto.descricaoProduto}" placeholder="Descrição" th:field="*{descricaoProduto}" />
 		 	</div>
 		 	<div class="form-group">
 			    <label for="preco">Preço:</label>
-				<input type="number" class="form-control" value="${produto.precoProduto}" placeholder="R$..." th:field="*{precoProduto}" /> 
+				<input type="number" class="form-control" value="${produto.precoProduto}" placeholder="R$..." th:field="*{precoProduto}" />
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPrecoPorcent">Reajuste porcent</button>
 		 	</div>
 			<div class="form-group" >
 				<button type="submit" class="btn btn-primary">Alterar</button>
 			</div>
 		</form>
 	</div>
+	
+	 <div class="modal fade" id="modalPrecoPorcent" tabindex="-1" role="dialog" aria-labelledby="modalPrecoPorcent" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	    	
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="modalPrecoPorcent">Preço do produto</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      	<label for="preco">Preço:</label>
+	    	<input type="number" class="form-control" value="${produto.precoProduto}" th:field="*{produto.precoProduto}" placeholder="Preço" readonly="readonly"/> 
+	      </div>
+		  <form action="/product/reajuste" th:action="@{/product/reajuste}" th:object="${produtoAtualizado}" method="post">
+		   	  <input type="hidden" th:name="codigoProduto" th:value="${produto.codigoProduto}" />
+		      <div class="modal-body">
+		      	<label for="reajuste">Reajuste:</label>
+		    	<input type="number" class="form-control" value="porcentagem" id="porcentagem" name="porcentagem" placeholder="%"/> 
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="submit" class="btn btn-primary">Atualizar Preço</button>
+		      </div>
+			</form>
+	    </div>
+	  </div>
+	</div>
 
+ 	<script th:inline="javascript">
+	    function function1(preco) {
+	        console.log(preco);
+	    }
+	</script>
 </body>
+</html>
