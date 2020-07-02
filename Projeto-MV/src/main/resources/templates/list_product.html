@@ -38,6 +38,9 @@
 <body>
   	<div id="page-top">
         <div class="container-fluid">
+        <div class="form-group">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPrecoPorcent">Reajuste porcent</button>
+	 	</div>
           <!-- DataTables Example -->
           <div class="card mb-7">
             <div class="card-header">
@@ -81,6 +84,30 @@
           </div>
         </div>
      </div>
+     
+      <div class="modal fade" id="modalPrecoPorcent" tabindex="-1" role="dialog" aria-labelledby="modalPrecoPorcent" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	    	
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="modalPrecoPorcent">Reajuste Total</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+		  <form action="/product/reajusteTodosProd" th:action="@{/product/reajusteTodosProd}" th:object="${produtoAtualizado}" method="post">
+		      <div class="modal-body">
+		      	<label for="reajuste">Reajuste:</label>
+		    	<input type="number" class="form-control" value="porcentagem" id="porcentagem" name="porcentagem" placeholder="%"/> 
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="submit" class="btn btn-primary">Atualizar Preço</button>
+		      </div>
+		   </form>
+	    </div>
+	  </div>
+	</div>
 
     <!-- Bootstrap core JavaScript-->
     <script th:src="@{../vendor/jquery/jquery.min.js}"></script>

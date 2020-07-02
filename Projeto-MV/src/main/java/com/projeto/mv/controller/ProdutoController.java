@@ -55,8 +55,13 @@ public class ProdutoController {
 	}
 	
 	@PostMapping(value="/add")
-	public ModelAndView saveProduto(@ModelAttribute("produto") Produto produto){
-		if(produto != null) {
+	public ModelAndView saveProduto(@ModelAttribute("produto") ProdutoDTO produtoDTO){
+		if(produtoDTO != null) {
+			Produto produto = new Produto();
+			
+			produto.setCodigoProduto(produtoDTO.getCodigoProduto());
+			produto.setDescricaoProduto(produtoDTO.getDescricaoProduto());
+			produto.setPrecoProduto(produtoDTO.getPrecoProduto());
 			produtoService.saveProduto(produto);
 		}
 		return new ModelAndView("redirect:/product/list");
@@ -70,12 +75,18 @@ public class ProdutoController {
 		if(produto != null) {
 			model.addObject("produto", produto.get());
 		}
-		return model;	
+		return model;
 	}
 	
 	@PostMapping(value="/editProduct")
-	public ModelAndView editProduto(@ModelAttribute("produto") Produto produto){
-		if( produto.getDescricaoProduto() != null ) {
+	public ModelAndView editProduto(@ModelAttribute("produto") ProdutoDTO produtoDTO){
+		if( produtoDTO.getDescricaoProduto() != null ) {
+			Produto produto = new Produto();
+			
+			produto.setCodigoProduto(produtoDTO.getCodigoProduto());
+			produto.setDescricaoProduto(produtoDTO.getDescricaoProduto());
+			produto.setPrecoProduto(produtoDTO.getPrecoProduto());
+			
 			produtoService.editProduto(produto);
 
 		}
@@ -84,10 +95,23 @@ public class ProdutoController {
 	}
 	
 
-	@PostMapping(value="/reajuste")
-	public ModelAndView addUser(@ModelAttribute("produtoAtualizado") Produto produto){
+	@PostMapping(value="/reajusteUmProd")
+	public ModelAndView reajustarPrecoUmProd(@ModelAttribute("produtoAtualizado") ProdutoDTO produtoDto){
+		
+		Produto produto = new Produto();
+		
+		produto.setCodigoProduto(produtoDto.getCodigoProduto());
+		produto.setPorcentagem(produtoDto.getPorcentagem());
 
 		produtoService.alterarPrecoPorcentPorProduto(produto.getCodigoProduto(), produto.getPorcentagem());
+
+		return new ModelAndView("redirect:/product/list");
+	}
+	
+	@PostMapping(value="/reajusteTodosProd")
+	public ModelAndView reajustarPrecoTodosProd(@ModelAttribute("produtoAtualizado") Produto produto){
+
+		produtoService.alterarPrecoPorcentGeral(produto.getPorcentagem());
 
 		return new ModelAndView("redirect:/product/list");
 	}

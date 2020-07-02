@@ -5,11 +5,16 @@ public class ProdutoDTO {
 	private Long codigoProduto;
 	private String descricaoProduto;
 	private double precoProduto;
+	private double porcentagem;
+	
+	public ProdutoDTO() {
+	}
 
-	public ProdutoDTO(Long codigoProduto, String descricaoProduto, double precoProduto) {
+	public ProdutoDTO(Long codigoProduto, String descricaoProduto, double precoProduto, double porcentagem) {
 		this.codigoProduto = codigoProduto;
 		this.descricaoProduto = descricaoProduto;
 		this.precoProduto = precoProduto;
+		this.porcentagem = porcentagem;
 	}
 
 	public Long getCodigoProduto() {
@@ -34,6 +39,15 @@ public class ProdutoDTO {
 
 	public void setPrecoProduto(double precoProduto) {
 		this.precoProduto = precoProduto;
+	}
+	
+
+	public double getPorcentagem() {
+		return porcentagem;
+	}
+
+	public void setPorcentagem(double porcentagem) {
+		this.porcentagem = porcentagem;
 	}
 
 }

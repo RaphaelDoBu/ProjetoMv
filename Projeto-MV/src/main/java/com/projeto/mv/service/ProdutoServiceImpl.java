@@ -63,10 +63,10 @@ public class ProdutoServiceImpl implements ProdutoService{
 	}
 	
 	@Override
-	public void alterarPrecoPorcentGeral(long codigoProduto) {
+	public void alterarPrecoPorcentGeral(double porcentagem) {
 		SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplateObject).withCatalogName("pck_produto").withProcedureName("atualiza_todos");
 		
-		SqlParameterSource in = new MapSqlParameterSource().addValue("id_produto", codigoProduto);
+		SqlParameterSource in = new MapSqlParameterSource().addValue("valor", porcentagem);
 		Map<String, Object> out = jdbcCall.execute(in);
 	}
 
