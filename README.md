@@ -1,8 +1,9 @@
 # ProjetoMv
 Projeto para entrevista tecnica utilizando Springboot, Thymeleaf, Bootstrap, OracleSql.
+Vídeo Explicativo: https://www.dropbox.com/s/jclk8xfd3redchn/video-explicativo-projeto-mv.mp4?dl=0
 
 ## SpringBoot
-Rota inicial: http://localhost:8080/product/list
+Rota Inicial: http://localhost:8080/product/list
 
 ## Docker
 Foi necessário criar uma nova instancia de usuário utilizando Docker, com os seguintes comandos:
