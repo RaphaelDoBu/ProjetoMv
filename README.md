@@ -1,6 +1,9 @@
 # ProjetoMv
 Projeto para entrevista tecnica utilizando Springboot, Thymeleaf, Bootstrap, OracleSql.
 
+## SpringBoot
+http://localhost:8080/product/list
+
 ## Docker
 Foi necessário criar uma nova instancia de usuário utilizando Docker, com os seguintes comandos:
 SQL Developer.
