@@ -15,9 +15,9 @@ public interface ProdutoService {
 	
 	List<Produto> findAll();
 	Optional<Produto> findByCodigoProduto(final long codigoProduto);
-	Optional<Produto> saveProduto(final Produto produto);
+	Optional<Produto> saveProduto(final ProdutoDTO produtoDTO);
 	void deleteProduto(final long codigoProduto);
-	Optional<Produto> editProduto(Produto produto);
+	Optional<Produto> editProduto(ProdutoDTO produtoDTO);
 	void alterarPrecoPorcentPorProduto(long codigoProduto, double porcentagem);
 	void alterarPrecoPorcentGeral(double porcentagem);
 	

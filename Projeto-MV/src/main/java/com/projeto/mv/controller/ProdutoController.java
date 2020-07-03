@@ -28,7 +28,7 @@ import com.projeto.mv.service.ProdutoService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 
 /**
- * Classe que representa o objeto produto a ser manipulado
+ * Classe que representa o controller do produto (rotas)
  * @author jose.raphael.s.bu
  *
  */
@@ -36,6 +36,9 @@ import com.sun.org.apache.xpath.internal.operations.Mod;
 @RequestMapping("/product")
 public class ProdutoController {
 	
+	/**
+	 * Ligação com a interface da camada do serviço do produto
+	 */
 	@Autowired
 	private ProdutoService produtoService;
 	
@@ -82,13 +85,7 @@ public class ProdutoController {
 	@PostMapping(value="/add")
 	public ModelAndView saveProduto(@ModelAttribute("produto") ProdutoDTO produtoDTO){
 		if(produtoDTO != null) {
-			Produto produto = new Produto();
-			
-			produto.setCodigo(produtoDTO.getCodigo());
-			produto.setNome(produtoDTO.getNome());
-			produto.setDescricao(produtoDTO.getDescricao());
-			produto.setPreco(produtoDTO.getPreco());
-			produtoService.saveProduto(produto);
+			produtoService.saveProduto(produtoDTO);
 		}
 		return new ModelAndView("redirect:/product/list");
 	}
@@ -117,15 +114,7 @@ public class ProdutoController {
 	@PostMapping(value="/editProduct")
 	public ModelAndView editProduto(@ModelAttribute("produto") ProdutoDTO produtoDTO){
 		if( produtoDTO.getNome() != null ) {
-			Produto produto = new Produto();
-			
-			produto.setCodigo(produtoDTO.getCodigo());
-			produto.setNome(produtoDTO.getNome());
-			produto.setDescricao(produtoDTO.getDescricao());
-			produto.setPreco(produtoDTO.getPreco());
-			
-			produtoService.editProduto(produto);
-
+			produtoService.editProduto(produtoDTO);
 		}
 				
 		return new ModelAndView("redirect:/product/list");
@@ -138,13 +127,8 @@ public class ProdutoController {
 	 */
 	@PostMapping(value="/reajusteUmProd")
 	public ModelAndView reajustarPrecoUmProd(@ModelAttribute("produtoAtualizado") ProdutoDTO produtoDto){
-		
-		Produto produto = new Produto();
-		
-		produto.setCodigo(produtoDto.getCodigo());
-		produto.setPorcentagem(produtoDto.getPorcentagem());
-
-		produtoService.alterarPrecoPorcentPorProduto(produto.getCodigo(), produto.getPorcentagem());
+	
+		produtoService.alterarPrecoPorcentPorProduto(produtoDto.getCodigo(), produtoDto.getPorcentagem());
 
 		return new ModelAndView("redirect:/product/list");
 	}
