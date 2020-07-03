@@ -23,16 +23,23 @@ Below useful commands use in the tutorial:
 
  connect sys as sysdba;
  -- Here enter the password as 'Oradoc_db1'
+ 
  alter session set "_ORACLE_SCRIPT"=true;
+ 
  create user dummy identified by dummy;
+ 
  GRANT ALL PRIVILEGES TO dummy;
 
 4. Configure SQL Developer
 
  Username: dummy
+ 
  Password: dummy
+ 
  Hostname: localhost
+ 
  Port: 1521
+ 
  Service name: ORCLCDB.localdomain
  
 ## Package e Procedures Oracle Sql
