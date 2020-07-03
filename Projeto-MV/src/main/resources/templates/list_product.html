@@ -53,6 +53,7 @@
                   <thead>
                     <tr>
                       <th>Código do Produto</th>
+                      <th>Nome</th>
                       <th>Descrição</th>
                       <th>Preço</th>
                       <th>Editar</th>
@@ -63,17 +64,18 @@
                   <tbody>
 	                 <tr th:each="produto, rowStat: ${produtos}"
 					 	 th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
-				        <td th:text="${produto.codigoProduto}"></td>
-						<td th:text="${produto.descricaoProduto}"></td>
-				        <td th:text="'R$ ' + ${produto.precoProduto}"></td>
+				        <td th:text="${produto.codigo}"></td>
+				        <td th:text="${produto.nome}"></td>
+						<td th:text="${produto.descricao}"></td>
+				        <td th:text="'R$ ' + ${produto.preco}"></td>
 				        <td>
 							<div class="btn-group pull-right">
-								<a class="btn btn-sm btn-primary" th:href="@{/product/edit/{id}(id=${produto.codigoProduto})}">Editar</a>
+								<a class="btn btn-sm btn-primary" th:href="@{/product/edit/{id}(id=${produto.codigo})}">Editar</a>
 							</div>
 						</td>
 						<td>
 							<div class="btn-group pull-right">
-								<a class="delete btn btn-sm btn-danger" th:href="@{/product/delete/{id}(id=${produto.codigoProduto})}">Excluir</a>
+								<a class="delete btn btn-sm btn-danger" th:href="@{/product/delete/{id}(id=${produto.codigo})}">Excluir</a>
 							</div>
 						</td>
 				    </tr>

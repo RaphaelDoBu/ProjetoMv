@@ -84,9 +84,10 @@ public class ProdutoController {
 		if(produtoDTO != null) {
 			Produto produto = new Produto();
 			
-			produto.setCodigoProduto(produtoDTO.getCodigoProduto());
-			produto.setDescricaoProduto(produtoDTO.getDescricaoProduto());
-			produto.setPrecoProduto(produtoDTO.getPrecoProduto());
+			produto.setCodigo(produtoDTO.getCodigo());
+			produto.setNome(produtoDTO.getNome());
+			produto.setDescricao(produtoDTO.getDescricao());
+			produto.setPreco(produtoDTO.getPreco());
 			produtoService.saveProduto(produto);
 		}
 		return new ModelAndView("redirect:/product/list");
@@ -115,12 +116,13 @@ public class ProdutoController {
 	 */
 	@PostMapping(value="/editProduct")
 	public ModelAndView editProduto(@ModelAttribute("produto") ProdutoDTO produtoDTO){
-		if( produtoDTO.getDescricaoProduto() != null ) {
+		if( produtoDTO.getNome() != null ) {
 			Produto produto = new Produto();
 			
-			produto.setCodigoProduto(produtoDTO.getCodigoProduto());
-			produto.setDescricaoProduto(produtoDTO.getDescricaoProduto());
-			produto.setPrecoProduto(produtoDTO.getPrecoProduto());
+			produto.setCodigo(produtoDTO.getCodigo());
+			produto.setNome(produtoDTO.getNome());
+			produto.setDescricao(produtoDTO.getDescricao());
+			produto.setPreco(produtoDTO.getPreco());
 			
 			produtoService.editProduto(produto);
 
@@ -139,10 +141,10 @@ public class ProdutoController {
 		
 		Produto produto = new Produto();
 		
-		produto.setCodigoProduto(produtoDto.getCodigoProduto());
+		produto.setCodigo(produtoDto.getCodigo());
 		produto.setPorcentagem(produtoDto.getPorcentagem());
 
-		produtoService.alterarPrecoPorcentPorProduto(produto.getCodigoProduto(), produto.getPorcentagem());
+		produtoService.alterarPrecoPorcentPorProduto(produto.getCodigo(), produto.getPorcentagem());
 
 		return new ModelAndView("redirect:/product/list");
 	}

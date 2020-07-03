@@ -2,45 +2,53 @@ package com.projeto.mv.dto;
 
 public class ProdutoDTO {
 	
-	private Long codigoProduto;
-	private String descricaoProduto;
-	private double precoProduto;
+	private Long codigo;
+	private String descricao;
+	private String nome;
+	private double preco;
 	private double porcentagem;
-	
+
 	public ProdutoDTO() {
 	}
 
-	public ProdutoDTO(Long codigoProduto, String descricaoProduto, double precoProduto, double porcentagem) {
-		this.codigoProduto = codigoProduto;
-		this.descricaoProduto = descricaoProduto;
-		this.precoProduto = precoProduto;
+	public ProdutoDTO(String descricao, String nome, double preco, double porcentagem) {
+		this.descricao = descricao;
+		this.nome = nome;
+		this.preco = preco;
 		this.porcentagem = porcentagem;
 	}
 
-	public Long getCodigoProduto() {
-		return codigoProduto;
+	public Long getCodigo() {
+		return codigo;
 	}
 
-	public void setCodigoProduto(Long codigoProduto) {
-		this.codigoProduto = codigoProduto;
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
-	public String getDescricaoProduto() {
-		return descricaoProduto;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescricaoProduto(String descricaoProduto) {
-		this.descricaoProduto = descricaoProduto;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public double getPrecoProduto() {
-		return precoProduto;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setPrecoProduto(double precoProduto) {
-		this.precoProduto = precoProduto;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
 
 	public double getPorcentagem() {
 		return porcentagem;

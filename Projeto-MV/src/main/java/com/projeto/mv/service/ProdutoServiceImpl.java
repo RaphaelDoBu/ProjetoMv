@@ -40,13 +40,13 @@ public class ProdutoServiceImpl implements ProdutoService{
 	@Override
 	public Optional<Produto> saveProduto(Produto produto) {
 		produtoRepository.save(produto);
-		return produtoRepository.findById(produto.getCodigoProduto());
+		return produtoRepository.findById(produto.getCodigo());
 	}
 	
 	@Override
 	public Optional<Produto> editProduto(Produto produto) {
 		produtoRepository.save(produto);
-		return produtoRepository.findById(produto.getCodigoProduto());
+		return produtoRepository.findById(produto.getCodigo());
 	}
 
 	@Override
