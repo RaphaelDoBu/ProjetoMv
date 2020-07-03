@@ -2,7 +2,7 @@
 Projeto para entrevista tecnica utilizando Springboot, Thymeleaf, Bootstrap, OracleSql.
 
 ## SpringBoot
-rota inicial: http://localhost:8080/product/list
+Rota inicial: http://localhost:8080/product/list
 
 ## Docker
 Foi necessário criar uma nova instancia de usuário utilizando Docker, com os seguintes comandos:
