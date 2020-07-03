@@ -98,7 +98,7 @@
 		  <form action="/product/reajusteTodosProd" th:action="@{/product/reajusteTodosProd}" th:object="${produtoAtualizado}" method="post">
 		      <div class="modal-body">
 		      	<label for="reajuste">Reajuste:</label>
-		    	<input type="number" class="form-control" value="porcentagem" id="porcentagem" name="porcentagem" placeholder="%"/> 
+		    	<input type="number" class="form-control" th:value="${porcentagem}" id="porcentagem" name="porcentagem" placeholder="%"/> 
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
